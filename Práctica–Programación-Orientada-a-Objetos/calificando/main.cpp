@@ -43,10 +43,17 @@ void Calificando(){
     alumno3->setApellidos("Lujan Marruffo");
     alumno3->setDni("71814547K");
 
+    Personas *alumno4 = new Alumno();
+    alumno4->setNombre("Victor");
+    alumno4->setApellidos("Castro Puente");
+    alumno4->setDni("71814547M");
+
+
 
     ((Profesor*)profesor)->aniadir((Alumno*)alumno1);       // se hace cast para forxar a ejecutar funcionde clase hija y casta para enviarlo como parametro ya que cuando se creo fue como persona no como alumno
     ((Profesor*)profesor)->aniadir((Alumno*)alumno2);
     ((Profesor*)profesor)->aniadir((Alumno*)alumno3);
+    ((Profesor*)profesor)->aniadir((Alumno*)alumno4);
 
 
 
@@ -60,22 +67,28 @@ void Calificando(){
     ((Profesor*)profesor)->asignar((Alumno*)alumno3,9,10);
 
 
-
-
-    ((Profesor*)profesor)->aniadir((Alumno*)alumno1);       // se hace cast para forxar a ejecutar funcionde clase hija y casta para enviarlo como parametro ya que cuando se creo fue como persona no como alumno
-    ((Profesor*)profesor)->aniadir((Alumno*)alumno2);
-    ((Profesor*)profesor)->aniadir((Alumno*)alumno3);
+     ((Profesor*)profesor)->asignar((Alumno*)alumno4,10);
 
 
 
-    ((Profesor*)profesor)->asignar((Alumno*)alumno1,10);
-    ((Profesor*)profesor)->asignar((Alumno*)alumno1,8,9.9);
 
-    ((Profesor*)profesor)->asignar((Alumno*)alumno2,9);
-    ((Profesor*)profesor)->asignar((Alumno*)alumno2,9,10);
 
-    ((Profesor*)profesor)->asignar((Alumno*)alumno3,8,8);
-    ((Profesor*)profesor)->asignar((Alumno*)alumno3,9,10);
+
+
+//    ((Profesor*)profesor)->aniadir((Alumno*)alumno1);       // se hace cast para forxar a ejecutar funcionde clase hija y casta para enviarlo como parametro ya que cuando se creo fue como persona no como alumno
+//    ((Profesor*)profesor)->aniadir((Alumno*)alumno2);
+//    ((Profesor*)profesor)->aniadir((Alumno*)alumno3);
+
+
+
+//    ((Profesor*)profesor)->asignar((Alumno*)alumno1,10);
+//    ((Profesor*)profesor)->asignar((Alumno*)alumno1,8,9.9);
+
+//    ((Profesor*)profesor)->asignar((Alumno*)alumno2,9);
+//    ((Profesor*)profesor)->asignar((Alumno*)alumno2,9,10);
+
+//    ((Profesor*)profesor)->asignar((Alumno*)alumno3,8,8);
+//    ((Profesor*)profesor)->asignar((Alumno*)alumno3,9,10);
 
 
 
@@ -88,6 +101,17 @@ void Calificando(){
     // si alumno quiere añadir nota
     //((Alumno*)alumno2)->aniadir(5.5);
 
+    cout << "/*************************************************************/" << endl;
+    cout << "/***                      PROFESOR                         ***/" << endl;
+    cout << "/*************************************************************/" << endl;
+
+    cout << profesor->getNombre()<< " " <<profesor->getApellidos()<< " " <<profesor->getDni()<< endl;
+
     ((Profesor*)profesor)->imprimirAlumnos();
+
     ((Profesor*)profesor)->imprimirAlumnoMejorMedia();
+
+    delete alumno1;
+    delete alumno2;
+    delete alumno3;
 }

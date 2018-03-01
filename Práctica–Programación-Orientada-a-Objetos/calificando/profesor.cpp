@@ -1,4 +1,5 @@
 #include "profesor.h"
+#include "alumno.h"
 
 using namespace std;
 #include <iostream>
@@ -55,10 +56,22 @@ void Profesor::imprimirAlumnos()
     cout << "/***                      ALUMNOS                          ***/" << endl;
     cout << "/*************************************************************/" << endl;
     for (int i = 0; i < (int) getListaDeAlumnos().size(); i++) {
-      cout << getListaDeAlumnos()[i]->getNombre() +" "+ getListaDeAlumnos()[i]->getApellidos() +" "+ getListaDeAlumnos()[i]->getDni() + " ";
-      cout<< + obtenerNotaMedia(getListaDeAlumnos()[i]) << endl;
+      cout <<getListaDeAlumnos()[i]->getNombre() +" "+ getListaDeAlumnos()[i]->getApellidos() +" "+ getListaDeAlumnos()[i]->getDni() << endl;
+      cout<< "Notas "<< endl;
+      for (int j = 0; j < getListaDeAlumnos()[i]->getListaDeNotas().size(); j++) {
+           cout<< "nota"<< j+1 << " es  "<< getListaDeAlumnos()[i]->getListaDeNotas()[j]<< endl;
+      }
+
+      cout<< "Nota media :" << obtenerNotaMedia(getListaDeAlumnos()[i]) << endl;
+
+      cout<< endl;
+
+
+
      // cout <<  getListaDeAlumnos()[i]->getNombre() << " " << getListaDeAlumnos()[i]->getApellidos() << " con DNI " << getListaDeAlumnos()[i]->getDni() << " y nota media " << obtenerNotaMedia(getListaDeAlumnos()[i]) << endl;
     }
+
+    //cout << (int) getListaDeAlumnos().size() << endl;
 }
 
 void Profesor::imprimirAlumnoMejorMedia()
